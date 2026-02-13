@@ -1,204 +1,161 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
 
 * {
-  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
   scroll-behavior: smooth;
 }
 
-/* الخلفية الرئيسية */
 html, body {
   height: 100%;
   width: 100%;
-  background: linear-gradient(to right, rgba(25, 102, 202, 0.2), rgba(0, 0, 0, 0.1)),
-    url(img/zakay.jpg) no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(10, 40, 70, 0.7), rgba(0, 0, 0, 0.9)),
+    url('img/zakay.jpg') no-repeat center center fixed;
   background-size: cover;
-  overflow-x: hidden;
-}
-
-/* تنسيق عام */
-body {
+  color: #fff;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
-/* الشريط العلوي */
+/* === الهيدر المتجاوب === */
 header {
-  background: rgba(0, 0, 0, 0.7);
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 80px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease-in-out;
+  flex-wrap: wrap;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(15px);
+  transition: padding 0.3s ease;
 }
 
-/* الشعار */
 .logo {
+  font-size: 1.5em;
+  font-weight: 800;
+  color: #ffcc00;
   text-decoration: none;
-  color: #ffffff;
-  font-size: 1.8em;
-  font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 2px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s;
 }
 
 .logo:hover {
-  transform: scale(1.1);
-  color: #ffcc00;
+  transform: scale(1.05);
+  color: #ffffff;
 }
 
-/* القائمة العلوية */
 .navigation {
   display: flex;
-  gap: 25px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .navigation a {
   color: #ffffff;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 1.1em;
-  font-weight: 500;
-  transition: color 0.3s ease-in-out;
+  font-size: 1em;
+  transition: color 0.3s ease;
 }
 
 .navigation a:hover {
   color: #ffcc00;
 }
 
-/* زر القائمة للهواتف */
-.menu-toggle {
-  display: none;
-  font-size: 1.8em;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-/* تصميم القائمة عند الفتح في الهواتف */
-@media (max-width: 768px) {
-  .navigation {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: rgba(0, 0, 0, 0.9);
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-  }
-
-  .navigation a {
-    padding: 10px;
-    font-size: 1.2em;
-    display: block;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .navigation.active {
-    display: flex;
-  }
-}
-
-/* تحسين الأقسام */
-section {
-  padding: 120px 80px;
-  flex-grow: 1;
+/* === المحتوى الرئيسي === */
+.main {
+  flex: 1; /* لضمان دفع الفوتر لأسفل */
+  margin-top: 10px;
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 50px 30px;
+  border-radius: 20px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
-  border-radius: 15px;
-  margin: 100px auto 20px;
-  max-width: 1000px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  margin-inline: auto;
 }
 
 .main h2 {
-  font-size: 1.6em;
-  font-weight: 600;
+  font-size: 1.7em;
+  margin-bottom: 20px;
+  color: #ffcc00;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
 .main h2 span {
-  color: #ffcc00;
-  font-size: 2.5em;
-  font-weight: 800;
+  font-size: 2.3em;
+  font-weight: 900;
+  color: #fff;
 }
 
 .main h3 {
-  font-size: 1.3em;
-  font-weight: 300;
-  margin-top: 20px;
+  font-size: 1.1em;
+  font-weight: 400;
+  line-height: 2;
+  color: #e0e0e0;
+  margin-bottom: 30px;
 }
 
-/* الأزرار */
 .main-btn {
   display: inline-block;
-  background: linear-gradient(135deg, #07adc3, #005864);
-  color: #ffffff;
-  font-size: 1.2em;
-  font-weight: 600;
-  padding: 12px 30px;
-  border-radius: 30px;
-  margin-top: 20px;
-  transition: all 0.3s ease-in-out;
+  background: linear-gradient(to right, #07adc3, #005864);
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 10px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(7, 173, 195, 0.7);
 }
 
 .main-btn:hover {
   background: #ffcc00;
   color: #000;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-/* أيقونات التواصل الاجتماعي */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.social-icons a {
-  color: #ffcc00;
-  font-size: 1.8em;
-  margin: 0 15px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.social-icons a:hover {
-  color: #ffffff;
-  transform: scale(1.2);
-}
-
-/* الفوتر */
 footer {
-  margin-top: auto;
-  background: #1e1e1e;
-  color: #ffffff;
-  text-align: center;
+  background: #111;
   padding: 15px;
-  font-size: 1em;
-  backdrop-filter: blur(5px);
+  text-align: center;
+  font-size: 0.95em;
+  color: #ccc;
+  border-top: 1px solid #333;
+  width: 100%;
+  margin-top: auto;
 }
 
-/* تحسين استجابة الموقع للأجهزة الصغيرة */
+/* === استجابة الهواتف === */
 @media (max-width: 768px) {
   header {
-    padding: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  section {
-    padding: 80px 20px;
+  .navigation {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .main {
+    padding: 30px 15px;
   }
 
   .main h2 {
@@ -206,15 +163,84 @@ footer {
   }
 
   .main h2 span {
-    font-size: 2.2em;
+    font-size: 2em;
   }
 
   .main h3 {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   .main-btn {
     font-size: 1em;
-    padding: 10px 20px;
+    padding: 12px 25px;
   }
 }
+
+ form {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 34px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+              0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffcc00;
+  letter-spacing: 0.4px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  background-color: #ffcc00;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+input:focus,
+select:focus {
+  background-color: #ffffff;
+  border-color: #0bbcd6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(11, 188, 214, 0.35);
+}
+
+/* ================= BUTTON ================= */
+
+ button {
+  margin-top: 28px;
+  padding: 14px;
+  width: 100%;
+  background: #005864;
+  color: #ffcc00;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+button:hover {
+  background: #0bbcd6;
+  color: #002b30;
+}
+
+button:active {
+  transform: translateY(1px);
+}  
