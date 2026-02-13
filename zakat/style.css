@@ -11,10 +11,12 @@
 html, body {
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
-  background: linear-gradient(to right, rgba(48, 48, 48, 0.6), rgba(0, 0, 0, 0.5)),
-              url(../img/zakay.jpg) no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(10, 40, 70, 0.7), rgba(0, 0, 0, 0.9)),
+    url('../img/zakay.jpg') no-repeat center center fixed;
   background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -24,51 +26,52 @@ body {
 }
 
 header {
-  background: rgba(0, 0, 0, 0.7);
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 80px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
+  flex-wrap: wrap;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(15px);
+  transition: padding 0.3s ease;
 }
 
 .logo {
+  font-size: 1.5em;
+  font-weight: 800;
+  color: #ffcc00;
   text-decoration: none;
-  color: #ffffff;
-  font-size: 1.8em;
-  font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 2px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s;
 }
 
 .logo:hover {
-  transform: scale(1.1);
-  color: #ffcc00;
+  transform: scale(1.05);
+  color: #ffffff;
 }
 
 .navigation {
   display: flex;
-  gap: 25px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .navigation a {
-  color: #73ffff;
+  color: #ffffff;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 1.1em;
-  font-weight: 500;
-  transition: color 0.3s ease-in-out;
-  position: relative;
+  font-size: 1em;
+  transition: color 0.3s ease;
 }
 
 .navigation a:hover {
-  color: #ffffff;
+  color: #ffcc00;
 }
 
 .navigation a::after {
@@ -138,56 +141,86 @@ h1 {
   text-align: center;
 }
 
-form {
-  width: 50%;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ form {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 34px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+              0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 label {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #121212;
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffcc00;
+  letter-spacing: 0.4px;
 }
 
-input, select {
+input,
+select {
   width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  background-color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.25s ease;
 }
 
-button {
-  margin-top: 20px;
-  padding: 10px;
+input:focus,
+select:focus {
+  background-color: #ffffff;
+  border-color: #0bbcd6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(11, 188, 214, 0.35);
+}
+
+/* ================= BUTTON ================= */
+
+ button {
+  margin-top: 28px;
+  padding: 14px;
   width: 100%;
-  background-color: #3498db;
-  color: #fff;
+  background: #005864;
+  color: #ffcc00;
   font-size: 16px;
-  border-radius: 4px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 button:hover {
-  background-color: #2980b9;
+  background: #0bbcd6;
+  color: #002b30;
 }
 
+button:active {
+  transform: translateY(1px);
+}  
+
 #result {
-  max-width: 400px;
+  max-width: 500px;
   margin: 20px auto;
-  padding: 15px;
+  padding: 18px;
   text-align: center;
-  background-color: #ecf0f1;
-  border-radius: 4px;
+  background: linear-gradient(to right, #07adc3, #005864);
+  border-radius: 8px;
   font-size: 18px;
   font-weight: bold;
 }
+
 
 footer {
   margin-top: auto;
