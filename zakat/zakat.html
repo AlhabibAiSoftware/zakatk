@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <title> احسب زكاة الفطر لهذا العام </title>
+    </head>
+  <body>
+    <header>
+        <a href="../index.html" class="logo ">الركن الثالث</a> <!-- Link back to the main page -->        <nav class="navigation">
+
+            <a href="../msdr/index.html"> المـصدر </a>
+
+            <a href="../zakat/zakat.html">احسب زكاة الفطر لهذا العام</a>
+
+
+        </nav>
+    </header>
+  
+    <h1>حساب مقدار الزكاة</h1>
+    <form id="zakatForm">
+      <label for="material"> اختر النوع :</label>
+      <select id="material">
+
+        <option value="bar">البر</option>
+
+        <option value="rz">ألأرز</option>
+
+        <option value="ads">العدس</option>
+
+        <option value="sher"> الشعير</option>
+
+        <option value="dag">الدقيق الاحمر </option>
+
+      </select>
+
+      <label for="people">عدد الأفراد </label>
+      <input type="number" id="people" min="1" required />
+
+      <button type="submit">احسب</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+      document.getElementById('zakatForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const material = document.getElementById('material').value;
+        const people = parseInt(document.getElementById('people').value);
+        let requiredAmount = 0;
+// كيلو جرام 2.25 = 2250 جرام
+
+//جرام  2500 = كيلو جرام 2.5
+
+        if (material === 'bar') {
+          requiredAmount = people * 2.25;     
+        } 
+
+        if (material === 'rz') {
+          requiredAmount = people * 2.25;
+        }
+
+        if (material === 'sher') {
+          requiredAmount = people * 2.25;
+        }
+
+        if (material === 'ads') {
+          requiredAmount = people * 2.25;
+        }
+
+        if (material === 'dag') {
+          requiredAmount = people * 2.5;
+        }
+
+        document.getElementById('result').textContent =
+          'المقدار المطلوب: ' + requiredAmount + '  كيلو جرام ';
+      });
+    </script>
+                <footer>
+                  <h3> ملاحظه : اخر موعد لإخراج زكاة الفطر بغروب شمس يوم العيد وبعده تخرج قضاء مع الاثم حيث لا عذر والافضل اخراجها قبل صلاة العيد</h3>
+
+                      <p>&copy; ALhabib SOftware كل الحقوق محفوظه بواسطة </p>   
+                       <p>&copy; للتواصل 735083329 - 781918261</p>
+              </footer>
+  </body>
+</html>
